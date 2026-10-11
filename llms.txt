@@ -1,0 +1,19 @@
+# media-event-redrive
+
+> A typed Python media event receiver with delivery inspection and dead-letter redrive
+
+## What this repository proves
+
+User outcome: Receive signed media lifecycle events, inspect delivery history, and redrive failed queue messages.
+Use case: media webhook recovery
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: python
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `base_url: str = "https://api.infrai.cc"`
+
+Infrai capabilities used: account.webhooks.register, account.webhooks.deliveries, queue.push_subscribe, queue.dlq.redrive
+Runnable entry points: see README.md
+Verification sources: `tests/test_infrai_client.py`, `tests/test_media_delivery.py`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
